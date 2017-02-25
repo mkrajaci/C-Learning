@@ -1,4 +1,2 @@
-# Provjera-realnog-broja
-Ovaj program provjerava kakav je uneseni realni broj.
+# In this repo you can find programs from my learning session.
 
-Ovo je kratki program program sa vježbi na fakultetu.
