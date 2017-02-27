@@ -1,4 +1,4 @@
-/*Ispiöite sumu dva broja*/
+/*Ispi≈°ite sumu dva broja*/
 
 #include <stdio.h>
 
@@ -7,7 +7,7 @@ int main(void)
 	int prviBroj, drugiBroj, suma;
 
 	printf("Unesite dva broja za zbrajanje\n");
-	scanf("%d %d", &prviBroj, &drugiBroj);
+	scanf_s("%d %d", &prviBroj, &drugiBroj);
 
 	suma = prviBroj + drugiBroj;
 
