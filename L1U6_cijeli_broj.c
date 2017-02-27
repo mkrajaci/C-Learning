@@ -6,7 +6,7 @@ int main(void)
 {
 	int broj;
 	printf("Unesite jedan broj\n");
-	scanf("%d", &broj);
+	scanf_s("%d", &broj);
 
 	if(broj>=0)
 		printf("Da\n");
