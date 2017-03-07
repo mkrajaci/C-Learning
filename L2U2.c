@@ -1,11 +1,11 @@
-/*Uèitajte od korisnika jedan prirodni broj, te ispišite unatrag (od veæih prema manjima) sve brojeve manje od njega.*/
+/*Ucitajte od korisnika jedan prirodni broj, te ispisite unatrag (od vecih prema manjima) sve brojeve manje od njega.*/
 
 #include <stdio.h>
 
 int main(void)
 
 {
-	unsigned broj=1;
+	unsigned broj;
 	printf("unesite jedan prirodni broj:\n");
 	scanf_s("%u", &broj);
 
