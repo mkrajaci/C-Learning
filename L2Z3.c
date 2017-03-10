@@ -7,19 +7,28 @@ Dva broja su relativno prosta ukoliko nemaju zajednièkih djelitelja osim broja 1
 
 int main(void)
 {
-	int prvi_broj, drugi_broj, prosti_prvi, prosti_drugi;
+	int prvi_broj, drugi_broj, prosti_prvi=1, prosti_drugi=1, brojac, manji, flag = 0;
 
 	printf("Unesite jedan broj:\n");
 	scanf_s("%d", &prvi_broj);
 	printf("unesite drugi broj:\n");
 	scanf_s("%d", &drugi_broj);
 
-	prosti_prvi = prvi_broj / drugi_broj;
-	prosti_drugi = drugi_broj / prvi_broj;
+	if (prvi_broj < drugi_broj)
+		manji = prvi_broj;
+	else manji = drugi_broj;
 	
-	if (prosti_prvi == 0 != prosti_drugi == 0)
-		printf("Da");
-	else printf("Ne");
+
+	for (brojac = 2; brojac <= manji; brojac = brojac + 1)
+	{
+		if (prvi_broj % brojac == 0 && drugi_broj % brojac == 0)
+			flag = 1;
+			
+	}
+	
+	if (flag == 1)
+		printf("Nisu");
+	else printf("Jesu");
 
 	getchar();
 	getchar();
