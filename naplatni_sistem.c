@@ -16,41 +16,71 @@ Cijena artikla	Uplaæeni iznos	Povrat
 #include <stdio.h>
 int main(void)
 {
-	int cijena_artikla, uplaceni_iznos, povrat, razlika;
+	int uplaceni_iznos, povrat, razlika;
 	int kovanica_5kn, kovanica_2kn, kovanica_1kn, kovanica_50l, kovanica_20l, kovanica_10l, kovanica_5l;
-	
+	float cijena_artikla;
 
 	printf("Unesite cijenu artikla: ");
-	scanf_s("%d", &cijena_artikla);
+	scanf_s("%f", &cijena_artikla);
 	printf("\nUnesite uplaceni iznos: ");
 	scanf_s("%d", &uplaceni_iznos);
 
+	cijena_artikla = cijena_artikla * 100;
+	uplaceni_iznos = uplaceni_iznos * 100;
 
-	if (uplaceni_iznos > 0 && uplaceni_iznos <= 50)
+	if (uplaceni_iznos > 0 && uplaceni_iznos <= 5000)
 	{
 		if (cijena_artikla < uplaceni_iznos)
 		{
 			razlika = uplaceni_iznos - cijena_artikla;
 
-			if (razlika >= 5)
+			if (razlika >= 500)
 			{
-				kovanica_5kn = razlika / 5;
+				kovanica_5kn = razlika / 500;
 				printf("Od 5 kn cete dobiti: %d komada", kovanica_5kn);
-				povrat = razlika % 5;
+				povrat = razlika % 500;
 			}
 
-			if (povrat >= 2 && povrat < 5)
+			if (povrat >= 200 && povrat < 500)
 			{
-				kovanica_2kn = povrat / 2;
+				kovanica_2kn = povrat / 200;
 				printf("\nOd 2 kn cete dobiti: %d komada", kovanica_2kn);
-				povrat = povrat % 2;
+				povrat = povrat % 200;
 			}
 
-			if (povrat >= 1 && povrat < 2)
+			if (povrat >= 100 && povrat < 200)
 			{
-				kovanica_1kn = povrat / 1;
+				kovanica_1kn = povrat / 100;
 				printf("\nOd 1 kn cete dobiti: %d komada", kovanica_1kn);
-				povrat = povrat % 1;
+				povrat = povrat % 100;
+			}
+
+			if (povrat >= 50 && povrat < 100)
+			{
+				kovanica_50l = povrat / 50;
+				printf("\nOd 50 lipa cete dobiti: %d komada", kovanica_50l);
+				povrat = povrat % 50;
+			}
+
+			if (povrat >= 20 && povrat < 50)
+			{
+				kovanica_20l = povrat / 20;
+				printf("\nOd 20 lipa cete dobiti: %d komada", kovanica_20l);
+				povrat = povrat % 20;
+			}
+
+			if (povrat >= 10 && povrat < 20)
+			{
+				kovanica_10l = povrat / 10;
+				printf("\nOd 10 lipa cete dobiti: %d komada", kovanica_10l);
+				povrat = povrat % 10;
+			}
+
+			if (povrat >= 5 && povrat < 10)
+			{
+				kovanica_5l = povrat / 5;
+				printf("\nOd 5 lipa cete dobiti: %d komada", kovanica_5l);
+				povrat = povrat % 5;
 			}
 		}
 		else printf("Niste unijeli dovoljno novaca.");
