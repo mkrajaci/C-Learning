@@ -13,18 +13,18 @@ vrijednosti: 1, 0, -2, 2, 3, 4, 5 program treba ispisati da je najveći 5, najma
 geometrijska sredina 2.61.*/
 
 #include <stdio.h>
+#include <math.h>
 
 void funkcija();
 
 int main(void)
 {
-	unsigned uneseni_broj, broj_clanova;
-	printf("Unesite broj clanova");
+	unsigned broj_clanova;
+	printf("Unesite broj clanova: ");
 	scanf_s("%u", &broj_clanova);
 
-
-	funkcija(uneseni_broj, broj_clanova);
-
+	funkcija(broj_clanova);
+		
 	getchar();
 	getchar();
 
@@ -32,13 +32,28 @@ int main(void)
 
 }
 
-void funkcija(uneseni_broj, broj_clanova);
+void funkcija(unsigned broj_clanova)
 {
-	unsigned najmanji = 0, najveci = 0, sredina = 0, brojac;
-	
-	if (uneseni_broj < najmanji)
+
+	unsigned uneseni_broj, umnozak = 1, brojac = 0, najmanji = 255, najveci = 0;
+	double sredina;
+
+	for (; brojac < broj_clanova;)
 	{
-		najmanji = uneseni_broj;
+		printf("unesite neku vrijednost: ");
+		scanf_s("%u", &uneseni_broj);
+		
+		if (uneseni_broj < 1)
+			continue;
+		else if (uneseni_broj < najmanji)
+			najmanji = uneseni_broj;
+		else if (uneseni_broj > najveci)
+			najveci = uneseni_broj;
+		umnozak = umnozak * uneseni_broj;
+		++brojac;
 	}
+	sredina = ((1 + sqrt(umnozak)) / brojac);
+
+	printf("Najveci %u najmanji %u sredina %lf", najveci, najmanji, sredina);
 
 }
