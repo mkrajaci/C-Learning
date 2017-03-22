@@ -24,7 +24,7 @@ int main(void)
 	scanf_s("%u", &broj_clanova);
 
 	funkcija(broj_clanova);
-		
+
 	getchar();
 	getchar();
 
@@ -35,14 +35,14 @@ int main(void)
 void funkcija(unsigned broj_clanova)
 {
 
-	unsigned uneseni_broj, umnozak = 1, brojac = 0, najmanji = 255, najveci = 0;
+	int uneseni_broj, umnozak = 1, brojac = 0, najmanji = 255, najveci = 0;
 	double sredina;
 
 	for (; brojac < broj_clanova;)
 	{
 		printf("unesite neku vrijednost: ");
-		scanf_s("%u", &uneseni_broj);
-		
+		scanf_s("%d", &uneseni_broj);
+
 		if (uneseni_broj < 1)
 			continue;
 		else if (uneseni_broj < najmanji)
@@ -52,8 +52,9 @@ void funkcija(unsigned broj_clanova)
 		umnozak = umnozak * uneseni_broj;
 		++brojac;
 	}
-	sredina = ((1 + sqrt(umnozak)) / brojac);
+	
+	sredina = pow(umnozak, 1.0 / brojac);
 
-	printf("Najveci %u najmanji %u sredina %lf", najveci, najmanji, sredina);
+	printf("Najveci %u najmanji %u sredina %.2lf", najveci, najmanji, sredina);
 
 }
