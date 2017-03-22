@@ -3,9 +3,9 @@ Napomena: za proslijeðeno slovo z odnosno Z, povratna vrijednost treba biti a od
 
 char koje_slovo(char korisnikovo_slovo)
 {
-	if (korisnikovo_slovo = 'z')
+	if (korisnikovo_slovo == 'z')
 		return 'a';
-	else if (korisnikovo_slovo = 'Z')
+	else if (korisnikovo_slovo == 'Z')
 		return 'A';
 	else 
 	{
@@ -19,9 +19,9 @@ int main(void)
 	char uneseno_slovo;
 
 	printf("Unesite jedno slovo:\n");
-	scanf_s("%c", &uneseno_slovo);
+	scanf_s(" %c", &uneseno_slovo);
 
-	printf("%c", koje_slovo(uneseno_slovo));
+	printf(" %c", koje_slovo(uneseno_slovo));
 	
 	getchar();
 	getchar();
