@@ -35,7 +35,7 @@ int main(void)
 void funkcija(unsigned broj_clanova)
 {
 
-	int uneseni_broj, umnozak = 1, brojac = 0, najmanji = 255, najveci = 0;
+	int uneseni_broj, umnozak = 1, brojac = 0, najmanji, najveci;
 	double sredina;
 
 	for (; brojac < broj_clanova;)
@@ -45,6 +45,7 @@ void funkcija(unsigned broj_clanova)
 
 		if (uneseni_broj < 1)
 			continue;
+		if (brojac == 1) najmanji = najveci = uneseni_broj;
 		else if (uneseni_broj < najmanji)
 			najmanji = uneseni_broj;
 		else if (uneseni_broj > najveci)
@@ -52,7 +53,7 @@ void funkcija(unsigned broj_clanova)
 		umnozak = umnozak * uneseni_broj;
 		++brojac;
 	}
-	
+
 	sredina = pow(umnozak, 1.0 / brojac);
 
 	printf("Najveci %u najmanji %u sredina %.2lf", najveci, najmanji, sredina);

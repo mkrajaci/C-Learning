@@ -7,46 +7,45 @@ Takoðer napraviti vlastitu funkciju za izraèun potencije.
 
 #include <stdio.h>
 
-void funkcija(int potencija);
-void funkcija_dva(int baza);
-
 int main(void)
 {
-	int potencija;
+	int broj_clanova, brojac = 0;
 
 	printf("Unesite broj elemenata\n");
-	scanf_s("%d", &potencija);
+	scanf_s("%d", &broj_clanova);
 
-	funkcija(potencija);
+	int i = 1;
+	while (1)
+	{
+		if (brojac < broj_clanova)
+		{
+			printf("%d ", i);
+			++brojac;
+		}
+		if (brojac < broj_clanova)
+		{
+			printf("%d ", potencija(i, i));
+			++brojac;
+		}
+		if (brojac == broj_clanova)
+			break;
+		++i;
+	}
 
 	getchar();
 	getchar();
 	return 0;
 }
 
-void funkcija(int potencija)		/*Funkcija odreðuje bazu*/
+int potencija(int baza, int eksponent)
 {
-	int brojac, baza = 1;
-
-	for (brojac = 1; brojac <= potencija;)
+	int potencija = 1;
+	int brojac = 1;
+	while (brojac <= eksponent)
 	{
-		baza = brojac;
+		potencija = potencija * baza;
 		++brojac;
-		--potencija;
-		printf("%d ", baza);
-		funkcija_dva(baza);
-
-
 	}
-}
+	return potencija;
 
-void funkcija_dva(int baza)			/*Funkcija odreðuje exponent*/
-{
-	int brojevi, brojac_2;
-	for (brojac_2 = 1, brojevi = 1; brojac_2 <= baza;)
-	{
-		brojevi = brojevi * baza;
-		++brojac_2;
-	}
-	printf("%d ", brojevi);
 }

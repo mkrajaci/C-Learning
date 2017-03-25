@@ -14,10 +14,8 @@ int main(void)
 	printf("Upisi pozitivan broj: ");
 	scanf_s("%u", &upisani_broj);
 
-	if (upisani_broj < 1)
-		;
-	else
-	{
+	if (upisani_broj > 1)
+		{
 		while (upisani_broj != 1)
 		{
 			if (upisani_broj % 2 == 0)
