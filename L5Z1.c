@@ -9,13 +9,13 @@ Napomena: koristiti bitovne operatore.*/
 int main(void)
 {
 	char znak;
-	int znak_ascii;
+	int ascii;
 
 	printf("Upisite jedan znak: ");
 	scanf_s(" %c", &znak);
-	znak_ascii = znak;
+	ascii = znak;
 
-	printf("%d", znak_ascii);
+	printf("%d", ascii);
 
 
 	getchar();
