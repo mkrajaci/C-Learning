@@ -6,29 +6,26 @@ Funkcija brojeve treba vratiti glavnom programu koji ih onda ispisuje.*/
 #include <stdio.h>
 #include <math.h>
 
-int funkcija_za_povrat_brojeva(int uneseni_broj);
+void funkcija_za_povrat_brojeva(int uneseni_broj, int *djeljiv, int *nije_djeljiv);
 
 int main(void)
 {
-	int uneseni_broj;
+	int uneseni_broj, djeljiv, nije_djeljiv;
 
 	printf("Unesite jedan cijeli broj: ");
 	scanf_s("%d", &uneseni_broj);
-
-	printf("%d", funkcija_za_povrat_brojeva(uneseni_broj));
 	
-
+	funkcija_za_povrat_brojeva(uneseni_broj, &djeljiv, &nije_djeljiv);	/*funkciji proslijeðujem uneseni broj i dva pointera*/
+	printf("%d %d", nije_djeljiv, djeljiv);								/*èitam što je funkcija zapisala na adresama pointera*/
+	
 	getchar();
 	getchar();
-
 	return 0;
 }
-	
-
-int funkcija_za_povrat_brojeva(int uneseni_broj)
-{
-	int znamenka, brojac, brojac_djeljiv = 0, brojac_nije_djeljiv = 0, djeljiv = 0, nije_djeljiv = 0;
-
+void funkcija_za_povrat_brojeva(int uneseni_broj, int *djeljiv, int *nije_djeljiv)	/*pitati za objašnjenje *djeljiv, pretpostavljam  */
+{																					/*kako on ustvari manipulira samo sa adresom djeljivog*/
+	int znamenka, brojac, brojac_djeljiv = 0, brojac_nije_djeljiv = 0;
+	*djeljiv = 0, *nije_djeljiv = 0;
 	brojac = 0;
 	while (uneseni_broj)
 	{
@@ -37,18 +34,15 @@ int funkcija_za_povrat_brojeva(int uneseni_broj)
 
 		if (znamenka % 3 == 0)
 		{
-			djeljiv = djeljiv + (pow(10, brojac_djeljiv) * znamenka);
+			*djeljiv += (pow(10, brojac_djeljiv) * znamenka);
 			++brojac_djeljiv;
 		}
 		else
 		{
-			nije_djeljiv = nije_djeljiv + (pow(10, brojac_nije_djeljiv) * znamenka);
+			*nije_djeljiv += (pow(10, brojac_nije_djeljiv) * znamenka);
 			++brojac_nije_djeljiv;
 		}
 		++brojac;
-
 	}
-
-	return djeljiv;
-	return nije_djeljiv;
+	return 0;
 }
