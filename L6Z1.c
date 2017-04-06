@@ -8,9 +8,9 @@ float funkcija_prima_niz(float *niz, int duljina, float element);
 float funkcija_apsolutna_vrijednost(float *niz, int duljina);
 int main(void)
 {
-	float element = 0.0, *p;
-	float niz[8] = { 1, 2, -4, 3, 0, 8, 5, 10 };
-	p = niz;
+	float element;
+	float niz[] = { 1, 2, -4, 3, 0, 8, 5, 10 };
+	int koliko_je_brojeva_u_nizu = sizeof(niz) / sizeof(niz[0]);	/*spremanje broja clanova niza*/
 /*
 	while (p <= &niz[7])
 	{
@@ -18,8 +18,8 @@ int main(void)
 		++p;
 	}
 */
-	element = funkcija_apsolutna_vrijednost(niz, 8);	/*spremanje elementa djeljenje iz rezultata funkcije*/
-	funkcija_prima_niz(niz, 8, element);				/*poziv funkcije za niz brojeva i djeljenje s navjecom apsolutnom vrijednoscu*/
+	element = funkcija_apsolutna_vrijednost(niz, koliko_je_brojeva_u_nizu);	/*spremanje elementa djeljenje iz rezultata funkcije*/
+	funkcija_prima_niz(niz, koliko_je_brojeva_u_nizu, element);				/*poziv funkcije za niz brojeva i djeljenje s navjecom apsolutnom vrijednoscu*/
 /*
 	putchar('\n');
 

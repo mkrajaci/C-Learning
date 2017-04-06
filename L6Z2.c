@@ -5,8 +5,9 @@ Rad funkcije testirati pozivom iz glavnog programa.*/
 void funkcija_veci_od_sume_svojih_prethodnika(int *niz, int duljina);
 int main(void)
 {
-	int niz[8] = { -6, 5, 3, 12, 7, -20, 10, -2 };
-	funkcija_veci_od_sume_svojih_prethodnika(niz, 8);
+	int niz[] = { -6, 5, 3, 12, 7, -20, 10, -2 };
+	int koliko_je_brojeva_u_nizu = sizeof(niz) / sizeof(niz[0]);
+	funkcija_veci_od_sume_svojih_prethodnika(niz, koliko_je_brojeva_u_nizu);
 	getchar();
 	getchar();
 	return 0;
