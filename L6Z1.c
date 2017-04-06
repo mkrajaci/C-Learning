@@ -4,19 +4,22 @@ U glavnom programu napuniti unosom od korisnika niz od 8 elemenata, proslijediti
 
 #include <stdio.h>
 #include <math.h>
-/*D O V R Š I T I*/
+float funkcija_prima_niz(float *niz, int duljina, float element);
+float funkcija_apsolutna_vrijednost(float *niz, int duljina);
 int main(void)
 {
-	float niz[3], element, *p;
-
+	float element = 0.0, *p;
+	float niz[8] = { 1, 2, -4, 3, 0, 8, 5, 10 };
 	p = niz;
-	while (p <= &niz[2])
+/*
+	while (p <= &niz[7])
 	{
 		scanf("%f", p);
 		++p;
 	}
-	element = funkcija_apsolutna_vrijednost(niz, 3);
-	funkcija_prima_niz(niz, 3, element);
+*/
+	element = funkcija_apsolutna_vrijednost(niz, 8);
+	funkcija_prima_niz(niz, 8, element);
 /*
 	putchar('\n');
 
@@ -31,27 +34,30 @@ int main(void)
 	getchar();
 	return 0;
 }
-float funkcija_prima_niz(float *niz, float duljina, float element)
+float funkcija_prima_niz(float *niz, int duljina, float element)
 {
 	int brojac = 0;
 	while (brojac < duljina)
 	{
-		niz[brojac]
+		niz[brojac] /= element;
+		printf("%f ", niz[brojac]);
+		++brojac;
 	}
+	return 1;
 }
-float funkcija_apsolutna_vrijednost(float *niz, float duljina)
+float funkcija_apsolutna_vrijednost(float *niz, int duljina)
 {
 	float apsolutna_vrijednost, najveca_abs_vrijednost = niz[0], element_sa_najvecom_abs_vrijednosti = niz[0];
-	int brojac = -1;
+	int brojac = 0;
 	while (brojac < duljina)
 	{
-		++brojac;
 		apsolutna_vrijednost = sqrt(pow(niz[brojac], 2));
 		if (apsolutna_vrijednost > najveca_abs_vrijednost)
 		{
 			najveca_abs_vrijednost = apsolutna_vrijednost;
 			element_sa_najvecom_abs_vrijednosti = niz[brojac];
 		}
+		++brojac;
 	}
 	return element_sa_najvecom_abs_vrijednosti;
 }
