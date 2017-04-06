@@ -18,8 +18,8 @@ int main(void)
 		++p;
 	}
 */
-	element = funkcija_apsolutna_vrijednost(niz, 8);
-	funkcija_prima_niz(niz, 8, element);
+	element = funkcija_apsolutna_vrijednost(niz, 8);	/*spremanje elementa djeljenje iz rezultata funkcije*/
+	funkcija_prima_niz(niz, 8, element);				/*poziv funkcije za niz brojeva i djeljenje s navjecom apsolutnom vrijednoscu*/
 /*
 	putchar('\n');
 
@@ -36,14 +36,18 @@ int main(void)
 }
 float funkcija_prima_niz(float *niz, int duljina, float element)
 {
-	int brojac = 0;
-	while (brojac < duljina)
+	if (element > 0)									/*Osigurac ako je element djeljenja == 0*/
 	{
-		niz[brojac] /= element;
-		printf("%f ", niz[brojac]);
-		++brojac;
+		int brojac = 0;
+		while (brojac < duljina)
+		{
+			niz[brojac] /= element;						/*djeljenje s elementom*/
+			printf("%f ", niz[brojac]);
+			++brojac;
+		}
+		return 1;
 	}
-	return 1;
+	return 0;
 }
 float funkcija_apsolutna_vrijednost(float *niz, int duljina)
 {
@@ -51,11 +55,11 @@ float funkcija_apsolutna_vrijednost(float *niz, int duljina)
 	int brojac = 0;
 	while (brojac < duljina)
 	{
-		apsolutna_vrijednost = sqrt(pow(niz[brojac], 2));
-		if (apsolutna_vrijednost > najveca_abs_vrijednost)
+		apsolutna_vrijednost = sqrt(pow(niz[brojac], 2));	/*formula za apsolutnu vrijednost*/
+		if (apsolutna_vrijednost > najveca_abs_vrijednost)	
 		{
 			najveca_abs_vrijednost = apsolutna_vrijednost;
-			element_sa_najvecom_abs_vrijednosti = niz[brojac];
+			element_sa_najvecom_abs_vrijednosti = niz[brojac];	/*spremanje elementa koji ima najvecu abs vrijednost*/
 		}
 		++brojac;
 	}
