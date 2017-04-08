@@ -13,7 +13,7 @@ int main(void)
 
 	for (brojac = 0; brojac <= 7; ++brojac)
 	{
-		broj = rand() % 39;
+		broj = rand() % 39;			/*Generiranje slucajnog broja manjeg od 39*/
 		p = broj;
 		printf("%d ", p);
 	}
