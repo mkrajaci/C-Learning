@@ -14,16 +14,16 @@ int main(void)
 
 	printf("Unesite jedan cijeli broj: ");
 	scanf_s("%d", &uneseni_broj);
-	
+
 	funkcija_za_povrat_brojeva(uneseni_broj, &djeljiv, &nije_djeljiv);	/*funkciji proslijeðujem uneseni broj i dva pointera*/
 	printf("%d %d", nije_djeljiv, djeljiv);								/*èitam što je funkcija zapisala na adresama pointera*/
-	
+
 	getchar();
 	getchar();
 	return 0;
 }
-void funkcija_za_povrat_brojeva(int uneseni_broj, int *djeljiv, int *nije_djeljiv)	/*pitati za objašnjenje *djeljiv, pretpostavljam  */
-{																					/*kako on ustvari manipulira samo sa adresom djeljivog*/
+void funkcija_za_povrat_brojeva(int uneseni_broj, int *djeljiv, int *nije_djeljiv)	
+{																					
 	int znamenka, brojac, brojac_djeljiv = 0, brojac_nije_djeljiv = 0;
 	*djeljiv = 0, *nije_djeljiv = 0;
 	brojac = 0;

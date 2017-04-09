@@ -9,17 +9,31 @@ Napomena: koristiti bitovne operatore.*/
 int main(void)
 {
 	char znak;
-	int ascii;
+	int koliko_nula;
 
 	printf("Upisite jedan znak: ");
-	scanf_s(" %c", &znak);
-	ascii = znak;
+	scanf(" %c", &znak);
 
-	printf("%d", ascii);
-
-
+	koliko_nula = NulBitova(znak);
+	
+	printf("Broj 0 je: %d", koliko_nula);
+	
 	getchar();
 	getchar();
 
 	return 0;
+}
+
+int NulBitova(char znak)
+{
+	int brojac = 0, koliko_nula = 0;
+	while (brojac < 8)
+	{
+		if (!(znak >> brojac & 1))
+		{
+			++koliko_nula;
+		}
+		++brojac;
+	}
+	return koliko_nula;
 }
