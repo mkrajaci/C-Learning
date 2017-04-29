@@ -15,9 +15,7 @@ int main(void)
 {
 	int *niz;
 	int brojac, sifra_proizvoda;
-	char proizvod_u_kosaricu;
-
-	
+	char proizvod_u_kosaricu;	
 	for (brojac = 0; ;)
 	{
 		printf("Zelite li dodati proizvod u kosaricu? ");
@@ -27,7 +25,7 @@ int main(void)
 		printf("Unesite sifru: ");
 		scanf("%d", &sifra_proizvoda);
 		++brojac;
-		if (brojac == 1)
+		if (brojac == 1)	//inace nepotrebno ali smo morali barem jednom upotrijebiti malloc, moglo je sve sa realloc
 		{
 			niz = malloc(brojac*sizeof(int));
 			niz[brojac] = sifra_proizvoda;
@@ -41,7 +39,6 @@ int main(void)
 	funkcija_za_izracun_cijena(brojac);
 	getchar();
 	getchar();
-
 	return 0;
 }
 void funkcija_za_izracun_cijena(int brojac)
@@ -56,7 +53,6 @@ void funkcija_za_izracun_cijena(int brojac)
 		niz_cijena[brojac] = rand() % 91 + 10;
 		suma += niz_cijena[brojac];
 		printf("%d ", niz_cijena[brojac]);
-
 	}
 	printf("Ukupna cijena iznosi: %d", suma);
 }
