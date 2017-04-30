@@ -16,8 +16,9 @@ int main(void)
 char *funkcija(char *ime, char *prezime)
 {
 	char *novi_string;
-	novi_string = malloc(strlen(ime) + strlen(prezime) + 1);
+	novi_string = malloc(strlen(ime) + strlen(prezime));
 	strcpy(novi_string, ime);
+	strcat(novi_string, " ");
 	strcat(novi_string, prezime);
 	return novi_string;
 }
