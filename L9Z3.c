@@ -26,14 +26,14 @@ char funkcija(char *pismo, char *clanak)
 	int ima_slovo;
 	for (; *pismo != '\0'; ++pismo)
 	{
-		if (!isspace(*pismo))
+		if (!isspace(*pismo))		//izbacijem razmake
 		{
 			ima_slovo = 0;
 			for (brojac = 0; clanak[brojac] != '\0'; ++brojac)
 			{
-				if (*pismo == clanak[brojac])
+				if (*pismo == clanak[brojac])		//jednako slovo
 				{
-					clanak[brojac] = '!';
+					clanak[brojac] = '!';		//krizam iskoristeno slovo
 					++ima_slovo;
 					break;
 				}
