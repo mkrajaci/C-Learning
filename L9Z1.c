@@ -1,17 +1,18 @@
-/*Napisati funkciju koja æe u zadanom stringu zamijeniti sva velika slova sa sluèajno odabranim malim slovima.
-Napisati funkciju koja primi string te odredi koje se slovo najèešæe pojavljuje unutar stringa te koja vraæa to slovo.
-Ukoliko se više slova pojavljuje jednak broj puta vratiti ono koje se nalazi prije u abecednom poretku.
-Uèitati string od korisnika te ga uz pomoæ kreiranih funkcija izmijeniti (ispisati ga nakon izmjene)
-te ispisati koje se slovo najèešæe pojavljuje.*/
+/*Napisati funkciju koja ce u zadanom stringu zamijeniti sva velika slova sa slucajno odabranim malim slovima.
+Napisati funkciju koja primi string te odredi koje se slovo najcesce pojavljuje unutar stringa te koja vraca to slovo.
+Ukoliko se vise slova pojavljuje jednak broj puta vratiti ono koje se nalazi prije u abecednom poretku.
+Ucitati string od korisnika te ga uz pomoc kreiranih funkcija izmijeniti (ispisati ga nakon izmjene)
+te ispisati koje se slovo najcesce pojavljuje.*/
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 void funkcija_zamjene_slova(char *niz);
 char funkcija_najcesce_slovo(char *niz);
 int main(void)
 {
 	char niz[] = "OvO Je NeKa ReCENIca";
-	//	gets(niz);
+//	gets(niz);
 	puts(niz);
 	printf("Nakon izmjene: ");
 	funkcija_zamjene_slova(niz);
@@ -35,12 +36,14 @@ char funkcija_najcesce_slovo(char *niz)
 {
 	char najcesce_slovo = 0;
 	int brojac_slova = 0;
+	int *niz_brojaca;
+	niz_brojaca = calloc(26, sizeof(int));
 	for (; *niz != '\0'; ++niz)
 	{
 		if (!isspace(*niz))
 		{
 			char *pokazivac = "abcdefghijklmnoprstuvzyx";
-			for (; *pokazivac != '\0'; ++pokazivac)
+			for (brojac_slova; pokazivac[brojac_slova] != '\0'; ++brojac_slova)
 			{
 				if (*pokazivac == *niz)
 				{
