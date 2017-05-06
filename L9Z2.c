@@ -1,10 +1,10 @@
-/*Napisati program koji æe izbrojati koliko reèenica ima rijeèi i ispisati najkraæu rijeè i njen broj znakova, 
-najdužu rijeè i koliko ima znakova te prosjeènu duljinu rijeèi. Rijeèi su odvojene znakom _.
-Primjer ispisa za reèenicu: Ovo_je_neki_string
-Broj rijeèi: 4
-Najkraæa rijeè je „je“ i ima 2 slova
-Najduža rijeè je „string“ i ima 6 slova
-Prosjeèna duljina rijeèi je: 3.75 slova*/
+/*Napisati program koji ce izbrojati koliko recenica ima rijeci i ispisati najkracu rijec i njen broj znakova,
+najduzu rijec i koliko ima znakova te prosjecnu duljinu rijeci. Rijeci su odvojene znakom _.
+Primjer ispisa za recenicu: Ovo_je_neki_string
+Broj rijeci: 4
+Najkraca rijec je "je" i ima 2 slova
+Najduza rijec je "string" i ima 6 slova
+Prosjecna duljina rijeci je: 3.75 slova*/
 #include <stdio.h>
 #include <string.h>
 int main(void)
@@ -31,5 +31,5 @@ int main(void)
 	printf("Prosjecna duljina rijeci je: %.2f", brojac_rijeci / brojac);
 	getchar();
 	getchar();
-	return 0;
+    return 0;
 }

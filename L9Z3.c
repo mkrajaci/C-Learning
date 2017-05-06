@@ -13,7 +13,7 @@ char funkcija(char *pismo, char *clanak);
 int main(void)
 {
 	char pismo[] = "Zelis li svog zeca natrag donesi Milku u pet iza benzinske";
-	char clanak[] = "Zelis li svog zeca natrag donesi Milku u pet iza benzinske";			//slova potrebna za pismo
+	char clanak[] = "ZeLIs li svOG zeca natrag donesi Milku u pet iza benzinske";			//slova potrebna za pismo
 //	char clanak[] = "zel";								//slova nedostatna za pismo
 	printf("%d", funkcija(pismo, clanak));
 	getchar();
@@ -31,7 +31,7 @@ char funkcija(char *pismo, char *clanak)
 			ima_slovo = 0;
 			for (brojac = 0; clanak[brojac] != '\0'; ++brojac)
 			{
-				if (*pismo == clanak[brojac])		//jednako slovo
+				if (toupper(*pismo) == toupper(clanak[brojac]))		//sve ih postavim na velika i provjeravam jednako slovo
 				{
 					clanak[brojac] = '!';		//krizam iskoristeno slovo
 					++ima_slovo;
