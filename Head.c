@@ -21,6 +21,7 @@ int main(void)
         {
             puts(buffer);
         }
+        else break;
     }
     fclose(f);
     return 0;
