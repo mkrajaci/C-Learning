@@ -15,17 +15,27 @@ int main(void)
     f=fopen("recenice.txt", "r");
     if(f==NULL)
         return 9;
-    int brojac=0;
-    while(fgets(buffer, 100, f)!=NULL)
-        ++brojac;       //Brojanje ukupnog broja linija
-    int pocetak_ispisa=brojac-n;    //Odredivanje pocetka ispisa
-    brojac=0;
-    fseek(f, 0, SEEK_SET);     //vracanje kursora na pocetak datoteke
-    while(fgets(buffer, 100, f)!=NULL)
+    int brojac=0, brojac_novih_redova=0;
+    fseek(f, 0, SEEK_END);  //slanje kursora na kraj
+    brojac=ftell(f);        //provjera duzine datoteke i spremanje u brojac za brojanje unatrag
+    for(; brojac>=0; --brojac)
     {
-        if(pocetak_ispisa<=brojac)  //ispis recenica kada brojac dodje do pocetka ispisa
-            puts(buffer);
-        ++brojac;
+        fseek(f, brojac, SEEK_SET); //pomicanje kursora na slovo po slovo od kraja prema pocetku datoteke
+        if(fgetc(f)=='\n')      //trazenje znaka za novi red
+        {
+            ++brojac_novih_redova;  //brojanje znakova za novi red ustvari recenica
+            if(brojac_novih_redova>n)   //kada je broj recenica veci od trazenog ispisuje sljedece recenice nakon n
+            {
+                for(brojac=0; brojac<=n; ++brojac)
+                {
+                    if(fgets(buffer, 100, f)!=NULL)//citanje linije po linije iz datoteke
+                    {
+                        puts(buffer);
+                    }
+                    else break;
+                }
+            }
+        }
     }
     fclose(f);
     return 0;
