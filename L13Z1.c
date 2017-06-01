@@ -3,7 +3,6 @@
  to znači da se prvog dana proizvod prodao 3 puta i to u količinama 1, 2, 3 - > ukupno 6 komada, drugog dana se prodao 2 puta i to u
  količinama 6, 3 -> ukupno 9. Potrebno je sadržaj binarne datoteke prepisati u tekstualnu datoteku „podaci.txt“ na način da se u nju
  pospreme samo ukupne količine, odnosno za navedeni sadržaj binarne datoteke, sadržaj tekstualne bi trebao izgledati: 6 9 2 0*/
-
 #include <stdio.h>
 int main(void)
 {
