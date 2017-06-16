@@ -10,7 +10,7 @@ Pozdrav svima koji ovo citaju. Ovdje mozete pronaci pregled mojih projekata/zada
 ****else****
 
 {
-Hello everyone, here you can find programs from my learning sessions. Complexity of programs are sorted by date, program with newest date is more complex. All programs are made with my fingers. In this programs you can find my implementation conditional branches, loops, functions, pointers, strings, structures, and files. My signature is changing through time so newest code will look like coder would write. I'm at the beginning of learning and mastering the programming methods and I like it, I love c it and I'm not ashamed to admit it.
+Hello everyone, here you can find programs from my learning sessions. Complexity of programs are sorted by date, program with newest date are more complex. All programs are made with my fingers. In this programs you can find my implementation conditional branches, loops, functions, pointers, strings, structures, and files. My signature is changing through time so newest code will look like coder would write. I'm at the beginning of learning and mastering the programming methods and I like it, I love c it and I'm not ashamed to admit it.
 }
 
 
